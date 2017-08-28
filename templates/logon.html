@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content%}
+
+	<form method="POST">
+		<input type="text" name="email" value="{{ email }}" placeholder="{{ email_ph }}">
+		<input type="password" name="password" value="{{ password }}" placeholder="{{ password_ph }}">
+		<input type="submit" value="submit" />
+	</form>
+
+{% endblock %}
