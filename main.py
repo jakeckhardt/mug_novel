@@ -29,7 +29,7 @@ class User(db.Model):
 		self.f_name = f_name
 		self.l_name = l_name
 		self.pw_hash = make_pw_hash(password)
-		
+
 
 class Posts(db.Model):
 	id = db.Column(db.Integer, primary_key = True)
@@ -90,12 +90,12 @@ def logon():
 
 		return render_template("logon.html", email=email, email_ph=email_ph, password="", password_ph=password_ph)
 
-	return render_template("logon.html", email="", email_ph="email", password="", password_ph="Password")
+	return render_template("logon.html", email="", email_ph="Email", password="", password_ph="Password")
 
 
 
-# signup page handlers 
-	
+# signup page handlers
+
 
 @app.route("/signup", methods=["POST", "GET"])
 def signup():
@@ -173,7 +173,7 @@ def index():
 	name = User.query.filter_by(email=session["email"]).first()
 	name = name.f_name
 	quote = ["Let us know how you're doing today.", "How are you doing today?", "What do you have on your mind?", "Do squirrels feel joy?", "It's a beautiful day, isn't it?", "Do you really believe the Zodiac killer is dead?"]
-	
+
 	if request.method == "POST":
 		message = request.form["message"]
 

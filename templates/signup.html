@@ -2,13 +2,19 @@
 
 {% block content%}
 
-	<form method="POST">
-		<input type="text" name="f_name" value="{{ f_name }}" placeholder="{{ f_name_ph }}">
-		<input type="text" name="l_name" value="{{ l_name }}" placeholder="{{ l_name_ph }}">
-		<input type="text" name="email" value="{{ email }}" placeholder="{{ email_ph }}">
-		<input type="password" name="password" value="{{ password }}" placeholder="{{ password_ph }}">
-		<input type="password" name="v_password" value="{{ v_password }}" placeholder="{{ v_password_ph }}">
-		<input type="submit" value="submit" />
-	</form>
+<div class="container-fluid">
+	<div class="content offset-1 col-10">
+
+		<form id="signup" method="POST">
+			<input type="text" name="f_name" value="{{ f_name }}" placeholder="{{ f_name_ph }}">
+			<input type="text" name="l_name" value="{{ l_name }}" placeholder="{{ l_name_ph }}">
+			<input type="text" name="email" value="{{ email }}" placeholder="{{ email_ph }}">
+			<input type="password" name="password" value="{{ password }}" placeholder="{{ password_ph }}">
+			<input type="password" name="v_password" value="{{ v_password }}" placeholder="{{ v_password_ph }}">
+			<input class="submitButton" type="submit" value="submit" />
+		</form>
+
+	</div>
+</div>
 
 {% endblock %}

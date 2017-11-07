@@ -2,21 +2,30 @@
 
 {% block content%}
 
-<h1>Hello, {{ name }}.</h1>
+<div class="container-fluid">
 
-<form method="POST">
-	<input type="textarea" name="message" value="{{ message }}" placeholder="{{ quote }}">
-	<input type="submit" value="submit" />
-</form>
+	<div class="content offset-1 col-10">
 
-{% for entry in messages %}
-<h3>{{ entry.message }}</h3>
-{% for user in users %}
-{% if entry.owner_id == user.id %}
-<p>{{ user.f_name + " " + user.l_name }} posted at {{ entry.time }}</p>
-{% endif %}
-{% endfor %}
-{% endfor %}
-	
+		<h1>Hello, {{ name }}.</h1>
+
+		<form id="post"method="POST">
+			<input id="textarea" type="textarea" name="message" value="{{ message }}" placeholder="{{ quote }}">
+			<input class="submitButton" type="submit" value="submit" />
+		</form>
+
+	</div>
+</div>
+<div class="container-fluid">
+	{% for entry in messages %}
+	<div class="content offset-1 col-10">
+		<h3>{{ entry.message }}</h3>
+		{% for user in users %}
+		{% if entry.owner_id == user.id %}
+		<p>{{ user.f_name + " " + user.l_name }} posted at {{ entry.time }}</p>
+		{% endif %}
+		{% endfor %}
+		</div>
+	{% endfor %}
+</div>
 
 {% endblock %}
